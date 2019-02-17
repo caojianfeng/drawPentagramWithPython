@@ -45,5 +45,5 @@ if __name__ == "__main__":
     speed(0)
     setpos(0, 0)
     hideturtle()
-    draw_pentagrams(LIMIT_COUNT, INIT_SIZE, (180, 1.0, 0.5), (0, 1.0, 0.5))
+    draw_pentagrams(LIMIT_COUNT, INIT_SIZE, (18, 1.0, 0.5), (0, 1.0, 0.7))
     done()
