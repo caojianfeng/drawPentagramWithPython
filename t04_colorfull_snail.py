@@ -20,7 +20,11 @@ def draw_pentagrams(left_count, size):
     new_left_count = left_count - 1
     right(BLOCK_ANGLE)
     if new_size > MIN_SIZE:
+        color('red', '#ff6666')
+        begin_fill()
         draw_pentagram(size)
+        end_fill()
+
         if new_left_count > 0:
             draw_pentagrams(new_left_count, new_size)
 
