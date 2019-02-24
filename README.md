@@ -31,23 +31,39 @@ Move the pentagram to center of the window. final center at (0,0).
 
 Draw a lot of pentagram at once
 
+style == diamond
 ![screen shot of tutorial 05 style is  diamond](screen_capture/t05_DIAMOND.png)
+
+style == snail
 ![screen shot of tutorial 05 style is  snail](screen_capture/t05_SNAIL.png)
+
+style == storm1
 ![screen shot of tutorial 05 style is  storm1](screen_capture/t05_STORM1.png)
+
+style == storm2
 ![screen shot of tutorial 05 style is  storm2](screen_capture/t05_STORM2.png)
 
 
 ### tutorial 06:
 Draw a lot of pentagram with different colors
+
+style == diamond
 ![screen shot of tutorial 06 style is  diamond](screen_capture/t06_DIAMOND.png)
+
+style == snail
 ![screen shot of tutorial 06 style is  snail](screen_capture/t06_SNAIL.png)
+
+style == storm1
 ![screen shot of tutorial 06 style is  storm1](screen_capture/t06_STORM1.png)
+
+style == storm2
 ![screen shot of tutorial 06 style is  storm2](screen_capture/t06_STORM2.png)
 
 ## Truble shutting:
-No module named 'PIL'
 
+If you get a error "No module named 'PIL'"
 you need to install Pillow
+
 ```bash
 pip install Pillow
 ```
