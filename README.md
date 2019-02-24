@@ -2,7 +2,7 @@
 
 ![screen shot of tutorial 06 style is  snail](screen_capture/t06_SNAIL.png)
 
-Pentagram is a interesting shape. You can find golden section in this shape.
+Pentagram is a interesting shape. You can find some golden section in this shape.
 
 ## Tutorials:
 
