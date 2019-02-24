@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from PIL import ImageColor
 
 def RGB_to_HSL(r, g, b):

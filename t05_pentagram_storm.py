@@ -1,19 +1,12 @@
 import math
 from turtle import *
+from draw_pentagram import draw_pentagram_edge
 from draw_pentagram import draw_pentagram
+from configs import *
 
-BLOCK_ANGLE = 288
-INIT_SIZE = 200
-MIN_SIZE = 10
-LIMIT_COUNT = 80
-
-# scale styles
-STYLE_DIAMOND_SCALE = 1
-STYLE_STORM1_SCALE = (4 - math.sqrt(5)) / 2
-STYLE_STORM2_SCALE = math.pow((math.sqrt(5) - 1) / 2, 1 / 5)
-STYLE_SNAIL_SCALE = (math.sqrt(5) - 1) / 2
-CURRENT_SCALE = STYLE_STORM1_SCALE
-
+CURRENT_SCALE = STYLE_DIAMOND_SCALE
+LIMIT_COUNT = 8 if CURRENT_SCALE == STYLE_DIAMOND_SCALE else 30
+DRAW_EDGE_ONLY = False if CURRENT_SCALE == STYLE_DIAMOND_SCALE else True
 
 def draw_pentagrams(left_count, size):
     if size <= MIN_SIZE:
@@ -22,14 +15,20 @@ def draw_pentagrams(left_count, size):
         return
 
     right(BLOCK_ANGLE)
-    draw_pentagram(size)
-
+    color('red', '#ff6666')
+    begin_fill()
+    if DRAW_EDGE_ONLY:
+        draw_pentagram_edge(size)
+    else:
+        draw_pentagram(size)
+    end_fill()
     new_size = CURRENT_SCALE * size
     new_left_count = left_count - 1
     draw_pentagrams(new_left_count, new_size)
 
 
 if __name__ == "__main__":
+    setup (width=WINDOW_SIZE,height=WINDOW_SIZE)
     speed(0)
     setpos(0, 0)
     hideturtle()

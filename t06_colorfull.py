@@ -1,19 +1,15 @@
 import math
 from turtle import *
-from draw_pentagram import draw_pentagram
+from draw_pentagram import draw_pentagram_edge, draw_pentagram
 from hsl2rgb import *
-BLOCK_ANGLE = 288
-INIT_SIZE = 200
-MIN_SIZE = 10
-LIMIT_COUNT = 80
+from configs import *
 
-# scale styles
-STYLE_DIAMOND_SCALE = 1
-STYLE_STORM1_SCALE = (4 - math.sqrt(5)) / 2
-STYLE_STORM2_SCALE = math.pow((math.sqrt(5) - 1) / 2, 1 / 5)
-STYLE_SNAIL_SCALE = (math.sqrt(5) - 1) / 2
-CURRENT_SCALE = STYLE_SNAIL_SCALE
+
 HDEGREE = 30
+
+CURRENT_SCALE = STYLE_STORM2_SCALE
+LIMIT_COUNT = 5 if CURRENT_SCALE == STYLE_DIAMOND_SCALE else 30
+DRAW_EDGE_ONLY = False if CURRENT_SCALE == STYLE_DIAMOND_SCALE else True
 
 
 def draw_pentagrams(left_count, size, hsl_border, hsl_fill):
@@ -30,7 +26,10 @@ def draw_pentagrams(left_count, size, hsl_border, hsl_fill):
     color(hsl2rgb(bh, bs, bl), hsl2rgb(fh, fs, fl))
     # color((255,0,0), (255,187,187))
     begin_fill()
-    draw_pentagram(size)
+    if DRAW_EDGE_ONLY:
+        draw_pentagram_edge(size)
+    else:
+        draw_pentagram(size)
     end_fill()
 
     new_size = size * CURRENT_SCALE
@@ -42,8 +41,10 @@ def draw_pentagrams(left_count, size, hsl_border, hsl_fill):
 
 
 if __name__ == "__main__":
+    setup (width=WINDOW_SIZE,height=WINDOW_SIZE)
     speed(0)
     setpos(0, 0)
     hideturtle()
     draw_pentagrams(LIMIT_COUNT, INIT_SIZE, (36, 1.0, 0.5), (0, 1.0, 0.7))
+    print(screensize())
     done()
