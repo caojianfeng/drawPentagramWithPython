@@ -34,7 +34,7 @@ This is how I get the Y_OFF.
 
 `$GOLDEN\_SECTION ={\frac {{\sqrt {5}-1}}{2}}$`
 
-`$CENTER\_YOFF ={\frac {{2GOLDEN\_SECTION-1}}{2}} * tan(54*\pi/180)$`
+`$CENTER\_YOFF ={\frac {{2GOLDEN\_SECTION-1}}{2}} * tan(54*\pi/180) * size$`
 
 ![screen shot of tutorial 04](screen_capture/t04.png)
 
