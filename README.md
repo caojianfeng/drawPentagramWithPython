@@ -24,6 +24,17 @@ So we can fill the whole pentagram with color.
 ### tutorial 04:
 
 Move the pentagram to center of the window. final center at (0,0).
+It is easy to kown , how to move the pentagram to the center of horizontal.
+Move the start point from (0, 0) to (-100, 0) is what we want.
+
+But how about the vertical center?
+You need some math knowledge to resolve this.
+
+This is how I get the Y_OFF.
+
+`$GOLDEN\_SECTION ={\frac {{\sqrt {5}-1}}{2}}$`
+
+`$CENTER\_YOFF ={\frac {{2GOLDEN\_SECTION-1}}{2}} * tan(54*\pi/180)$`
 
 ![screen shot of tutorial 04](screen_capture/t04.png)
 
